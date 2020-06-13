@@ -23,7 +23,7 @@ jobs:
                 name: Run Tests
                 command: |
                     mkdir -p ~/phpunit
-                    ./vendor/bin/phpunit --log-junit ~/phpunit/junit.xml --test-suffix=SampleTest.php --bootstrap vendor/autoload.php tests/.
+                    vendor/bin/phpunit --log-junit ~/phpunit/junit.xml --test-suffix=SampleTest.php --bootstrap vendor/autoload.php tests/.
                 when: always
             - store_test_results:
                 path: ~/phpunit
