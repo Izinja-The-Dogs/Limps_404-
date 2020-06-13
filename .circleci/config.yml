@@ -2,7 +2,7 @@ version: 2
 jobs:
     build:
         docker:
-            - image: circleci/PHP:7.2.20
+            - image: circleci/php:7.1.5-browsers
         steps:
             - run:
                 command: |
