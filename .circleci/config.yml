@@ -5,11 +5,8 @@ jobs:
             - image: circleci/php:7.2.20
         steps:
             - checkout
-            - run:
-                command: |
-                    mkdir -p ~/phpunit
-                    ./vendor/bin/phpunit --log-junit ~/phpunit/junit.xml tests
-                when: always
+            - run: ./vendor/bin/phpunit --log-junit ~/phpunit/junit.xml tests   
+                # when: always
             - store_test_results:
                 path: ~/phpunit
             - store_artifacts:
