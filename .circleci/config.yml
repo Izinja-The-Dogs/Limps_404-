@@ -2,7 +2,7 @@ version: 2
 jobs:
     build:
         docker:
-            - image: circleci/PHP:7.2.20
+            - image: circleci/php:7.2.20
         steps:
             - checkout
             - run:
@@ -16,7 +16,7 @@ jobs:
                 path: ~/phpunit 
     test:
         docker:
-            - image: circleci/PHP:7.2.20
+            - image: circleci/php:7.2.20
         steps:
             - checkout
             - run:
