@@ -8,7 +8,7 @@ jobs:
             - run:
                 command: |
                     mkdir -p ~/phpunit
-                    chmod +x vendor/bin/phpunit --log-junit ~/phpunit/junit.xml --test-suffix=SampleTest.php --bootstrap vendor/autoload.php tests/.
+                    ./vendor/bin/phpunit --log-junit ~/phpunit/junit.xml --test-suffix=SampleTest.php --bootstrap vendor/autoload.php tests/.
                 when: always
             - store_test_results:
                 path: ~/phpunit
