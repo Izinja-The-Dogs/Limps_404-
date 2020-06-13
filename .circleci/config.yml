@@ -20,9 +20,10 @@ jobs:
         steps:
             - checkout
             - run:
+                name: Run Tests
                 command: |
                     mkdir -p ~/phpunit
-                    phpunit --log-junit ~/phpunit/junit.xml tests
+                    ./vendor/bin/phpunit --log-junit ~/phpunit/junit.xml --test-suffix=SampleTest.php --bootstrap vendor/autoload.php tests/.
                 when: always
             - store_test_results:
                 path: ~/phpunit
