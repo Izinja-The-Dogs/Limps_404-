@@ -1,7 +1,5 @@
 <?php
 
-// require 'place_events.php';
-// echo $company_name;
 class TestPlaceEvents extends PHPUnit\Framework\TestCase {
     
     public function testInputFields() {

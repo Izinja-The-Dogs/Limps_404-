@@ -1,4 +1,6 @@
-version: 2
+version: 2.1
+orbs:
+  coveralls: coveralls/coveralls@1.0.6
 jobs:
     build:
         docker:
@@ -8,7 +10,7 @@ jobs:
             - run:
                 command: |
                     mkdir -p ~/phpunit
-                    php vendor/bin/phpunit --log-junit ~/phpunit/junit.xml --test-suffix=tests/UnitTesting/TestPlaceEvents.php --bootstrap vendor/autoload.php tests/.
+                    php vendor/bin/phpunit --log-junit ~/phpunit/junit.xml --test-suffix=php/TestPlaceEvents.php --bootstrap vendor/autoload.php tests/.
                 when: always
             - store_test_results:
                 path: ~/phpunit
@@ -23,7 +25,7 @@ jobs:
                 name: Run Tests
                 command: |
                     mkdir -p ~/phpunit
-                    php vendor/bin/phpunit --log-junit ~/phpunit/junit.xml --test-suffix=tests/UnitTesting/TestPlaceEvents.php --bootstrap vendor/autoload.php tests/.
+                    php vendor/bin/phpunit --log-junit ~/phpunit/junit.xml --test-suffix=php/TestPlaceEvents.php --bootstrap vendor/autoload.php tests/.
                 when: always
             - store_test_results:
                 path: ~/phpunit
