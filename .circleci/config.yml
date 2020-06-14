@@ -1,5 +1,13 @@
 version: 2
 
+machine:
+  environment:
+    COVERALLS_REPO_TOKEN: 3kYSPrgtcR6SJaKfOQrxcjSYUJ2UR9qg4
+    COVERALLS_PARALLEL: true
+
+notify:
+  webhooks:
+    - url: https://coveralls.io/webhook?repo_token=3kYSPrgtcR6SJaKfOQrxcjSYUJ2UR9qg4
 jobs:
     build:
         docker:
@@ -34,7 +42,7 @@ jobs:
                     php vendor/bin/phpunit --log-junit ~$CIRCLE_TEST_REPORTS/phpunit/junit.xml --test-suffix=php/TestPlaceEvents.php --bootstrap vendor/autoload.php tests/.
                 when: always
             - store_test_results:
-                path: ~/phpunit
+                path: ~$CIRCLE_TEST_REPORTS/phpunit
             - store_artifacts:
                 path: ~/phpunit
 
@@ -45,28 +53,6 @@ workflows:
         - build
         - test
 
-# workflow:
-#     version: 2.1
-    
-#     orbs:
-#         coveralls: coveralls/coveralls@1.0.6
-
-#     coveralls_coverage:
-#         jobs:
-#             build:
-#                 docker:
-#                     - image: circleci/php:7-fpm-browsers-legacy
-#                 steps:
-#                     - checkout
-#                     - run:
-#                         name: "Run tests"
-#                         command: phpdbg -qrr vendor/bin/phpunit --coverage-html build/coverage-report
-#                     - store_artifacts:
-#                         path:  build/coverage-report
-#                     - run:
-#                         name: Install and Make
-#                         command: npm install && make test-coverage
-#                     - coveralls/upload
 
 
 
