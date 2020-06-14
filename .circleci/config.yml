@@ -8,7 +8,7 @@ jobs:
             - checkout
             - run:
                 command: |
-                    mkdir -p $CIRCLE_TEST_REPORTS/phpunit
+                    mkdir -p $CIRCLE_TEST_REPORTS/phpunit && \
                     php vendor/bin/phpunit --log-junit $CIRCLE_TEST_REPORTS/phpunit/junit.xml --test-suffix=php/TestPlaceEvents.php --bootstrap vendor/autoload.php tests/.
                 when: always
 
