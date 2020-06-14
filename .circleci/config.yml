@@ -8,11 +8,11 @@ jobs:
         steps:
             - checkout
             - run:
-                name: Install and Make
                 command: |
+                    npm install && make test-coverage
                     mkdir -p ~/phpunit
                     php vendor/bin/phpunit --log-junit ~/phpunit/junit.xml --test-suffix=php/TestPlaceEvents.php --bootstrap vendor/autoload.php tests/.
-                    npm install && make test-coverage
+                    
                 when: always
             - coveralls/upload
             - store_test_results:
