@@ -10,10 +10,7 @@ jobs:
             - checkout
             - run:
                 name: Update npm
-                command: 'sudo npm install -g npm@latest'
-            - run:
-                name: Install npm wee
-                command: npm install
+                command: sudo npm install -g npm@latest
             - run:
                 command: |
                     mkdir -p ~/phpunit
