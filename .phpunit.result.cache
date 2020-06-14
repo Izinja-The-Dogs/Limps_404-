@@ -1,0 +1,1 @@
+C:37:"PHPUnit\Runner\DefaultTestResultCache":184:{a:2:{s:7:"defects";a:1:{s:32:"TestPlaceEvents::testInputFields";i:4;}s:5:"times";a:2:{s:33:"SampleTest::testTrueAssertsToTrue";d:0.378;s:32:"TestPlaceEvents::testInputFields";d:0.21;}}}
