@@ -1,20 +1,24 @@
 version: 2.1
 orbs:
-  coveralls: coveralls/coveralls@1.0.6
+    coveralls: coveralls/coveralls@1.0.6
 jobs:
     build:
         docker:
             - image: circleci/php:7.2.20
+            - image: 'circleci/node:10.0.0'
         steps:
             - checkout
             - run:
                 command: |
-                    npm install && make test-coverage
                     mkdir -p ~/phpunit
                     php vendor/bin/phpunit --log-junit ~/phpunit/junit.xml --test-suffix=php/TestPlaceEvents.php --bootstrap vendor/autoload.php tests/.
-                    
                 when: always
+
+            - run:
+                name: Install and Make
+                command: npm install && make test-coverage
             - coveralls/upload
+
             - store_test_results:
                 path: ~/phpunit
             - store_artifacts:
