@@ -12,6 +12,9 @@ jobs:
                 name: Update npm
                 command: 'sudo npm install -g npm@latest'
             - run:
+                name: Install npm wee
+                command: npm install
+            - run:
                 command: |
                     mkdir -p ~/phpunit
                     php vendor/bin/phpunit --log-junit ~/phpunit/junit.xml --test-suffix=php/TestPlaceEvents.php --bootstrap vendor/autoload.php tests/.
