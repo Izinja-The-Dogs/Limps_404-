@@ -1,0 +1,8 @@
+machine:
+  environment:
+    COVERALLS_REPO_TOKEN: 3kYSPrgtcR6SJaKfOQrxcjSYUJ2UR9qg4
+    COVERALLS_PARALLEL: true
+
+notify:
+  webhooks:
+    - url: https://coveralls.io/webhook?repo_token=3kYSPrgtcR6SJaKfOQrxcjSYUJ2UR9qg4
