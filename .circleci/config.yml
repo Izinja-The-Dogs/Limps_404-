@@ -45,11 +45,11 @@ workflow:
                     - image: circleci/node:12.16.1
                 steps:
                     - checkout
-                    - run:
-                        command: sudo apt-get install npm
-                    - run:
-                        name: Update npm
-                        command: sudo npm install -g npm@latest
+                    # - run:
+                    #     command: sudo apt-get install npm
+                    # - run:
+                    #     name: Update npm
+                    #     command: sudo npm install -g npm@latest
                     - run:
                         name: Install and Make
                         command: npm install && make test-coverage
