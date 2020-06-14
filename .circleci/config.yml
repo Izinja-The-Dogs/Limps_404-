@@ -8,14 +8,14 @@ jobs:
             - checkout
             - run:
                 command: |
-                    mkdir -p ~$CIRCLE_TEST_REPORTS/phpunit && \
+                    mkdir -p ~$CIRCLE_TEST_REPORTS/phpunit
                     php vendor/bin/phpunit --log-junit ~$CIRCLE_TEST_REPORTS/phpunit/junit.xml --test-suffix=php/TestPlaceEvents.php --bootstrap vendor/autoload.php tests/.
                 when: always
 
             - store_test_results:
-                path: ~/phpunit
+                path: ~$CIRCLE_TEST_REPORTS/phpunit
             - store_artifacts:
-                path: ~/phpunit 
+                path: ~$CIRCLE_TEST_REPORTS/phpunit 
     test:
         docker:
             - image: circleci/php:7.2.20
@@ -24,7 +24,7 @@ jobs:
             - run:
                 name: Run Tests
                 command: |
-                    mkdir -p ~$CIRCLE_TEST_REPORTS/phpunit && \
+                    mkdir -p ~$CIRCLE_TEST_REPORTS/phpunit
                     php vendor/bin/phpunit --log-junit ~$CIRCLE_TEST_REPORTS/phpunit/junit.xml --test-suffix=php/TestPlaceEvents.php --bootstrap vendor/autoload.php tests/.
                 when: always
             - store_test_results:
