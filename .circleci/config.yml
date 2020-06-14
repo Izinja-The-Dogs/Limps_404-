@@ -64,5 +64,5 @@ workflow:
                     - run:
                         name: Install and Make
                         command: npm install && make test-coverage
-                    - coveralls/upload
+                    # - coveralls/upload
 
