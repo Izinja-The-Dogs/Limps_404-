@@ -1,8 +1,5 @@
 version: 2
 
-orbs:
-    coveralls: coveralls/coveralls@1.0.6
-
 jobs:
     build:
         docker:
@@ -49,6 +46,10 @@ workflows:
 
 workflow:
     version: 2.1
+    
+    orbs:
+        coveralls: coveralls/coveralls@1.0.6
+
     coveralls_coverage:
         jobs:
             build:
@@ -64,5 +65,5 @@ workflow:
                     - run:
                         name: Install and Make
                         command: npm install && make test-coverage
-                    # - coveralls/upload
+                    - coveralls/upload
 
