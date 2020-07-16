@@ -57,18 +57,22 @@
     $required_skills = $_POST['required_skills'];
     $candidate_requirements = $_POST['candidate_requirements'];
 
-    if(!empty($_POST['email'])) {
-      $email = $_POST['email'];
-      $application_form = $_POST['application_form'];
-    }
-    else if($_POST['hyperlink']) {
-      $application_link = $_POST['hyperlink'];
-    }
-    else {
-      $email = $_POST['email'];
-      $application_form = $_POST['application_form'];
-      $application_link = $_POST['hyperlink'];
-    }
+    $email = $_POST['email'];
+    $application_form = $_POST['application_form'];
+    $application_link = $_POST['hyperlink'];
+
+    // if(!empty($_POST['email'])) {
+    //   $email = $_POST['email'];
+    //   $application_form = $_POST['application_form'];
+    // }
+    // else if(!empty($_POST['hyperlink'])) {
+    //   $application_link = $_POST['hyperlink'];
+    // }
+    // else {
+    //   $email = $_POST['email'];
+    //   $application_form = $_POST['application_form'];
+    //   $application_link = $_POST['hyperlink'];
+    // }
 
     $offer_closing_date = $_POST['due_date'].",". $_POST['due_time'];
     

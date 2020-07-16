@@ -10,6 +10,7 @@ class TestPlaceEvents extends PHPUnit\Framework\TestCase {
         $this->assertEquals($name_contact_person, 'Sakhile Mabunda');
         $this->assertEquals($email_address, 'selebrate22@gmail.com');
         $this->assertEquals($phone_number, '0715398516');
+        
     }
 
 }
