@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <title> Home Page</title>
-    <link rel="stylesheet" href="css/index_style.css?v=1.1">
+    <link rel="stylesheet" href="css/IndexStyle.css?v=1.1">
   </head>
   <body>
     
@@ -12,6 +12,21 @@
       <h1 class="portal-name">Wits Career Portal</h1>
       <div class="login">
         <h1>Sign in</h1>
+        <?php
+          if (isset($_GET['error'])) {
+            
+            if ($_GET['error'] == "account_not_verified") {
+              echo "<p class='sign-error'>Account not activated, verify your account in your email!</p>";
+            }
+            else if ($_GET['error'] == "wrongpwd") {
+              echo "<p class='sign-error'>Incorrect password!</p>";
+            }
+            else if ($_GET['error'] == "nouser") {
+              echo "<p class='sign-error'>Invalid username or email!</p>";
+            }
+          }
+        ?>
+        
         <form action="php/Login.inc.php" method="post">
           <input type="text" name="username" placeholder="Email">
           <input type="password" name="pwd" placeholder="Password">

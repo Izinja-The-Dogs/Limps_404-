@@ -31,10 +31,14 @@
                         header("Location: ../index.php?error=wrongpwd");
                         exit();
                     }
+                    else if ($row['active'] === 0) {
+                        header("Location: ../index.php?error=account_not_verified");
+                        exit();
+                    }
                     else if ($pwdCheck === true) {
 
                         session_start();
-                        $_SESSION['user_id'] = $row['id_users'];
+                        $_SESSION['user_id'] = $row['id_users']; // use fpr logout
                         $_SESSION['username'] = $row['company_name'];
                         
                         header("Location: ../home.php?login=success");

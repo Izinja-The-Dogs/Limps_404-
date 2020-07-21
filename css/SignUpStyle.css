@@ -94,3 +94,19 @@ a {
 a:hover {
 	text-decoration: underline;
 }
+
+.signup-error {
+	margin: 0;
+	padding: 0;
+	color: red;
+	font-size: 15px;
+	text-align: center;
+}
+
+.signup-success {
+	margin: 0;
+	padding: 0;
+	color: rgb(75,181,67);
+	font-size: 15px;
+	text-align: center;
+}

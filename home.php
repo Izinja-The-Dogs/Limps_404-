@@ -1,46 +1,27 @@
 <?php
   session_start();
+  require "pages/header.php";
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8" />
   <title> Home Page</title>
-	<link rel="stylesheet" href="css/home_style.css">
+	<link rel="stylesheet" href="css/HomeStyle.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="shortcut icon" type="image/png" href="images/ccdu_logo.png">
 </head>
 <body>
 
-  <header>
-    <div class="container">
-      <nav>
-        <h1 class="brand"><a href="home.php"><span class="green">C</span><span class="blue">C</span><span class="green">D</span><span class="blue">U</span></a></h1>
-        <ul>
-          <li><a href="home.php">Home</a></li>
-          <li><a href="pages/post_offer.php">Services <i class="fa fa-chevron-down"></i></a>
-            <div class="sub-menu">
-              <ul>
-                <li><a href="pages/post_offer.php">Post Offers</a></li>
-                <li><a href = "pages/place_events.php">Place Events</a></li>
-              </ul>
-            </div>
-          </li>
-          <li><a href = "pages/pricing.php">Pricing</a></li>
-          
-          <li>
-            <form action="php/Logout.inc.php" method="post">
-              <a name="logout_in" class="sign-in-btn">Logout</a>
-            </form>
-          </li>
-         
-        </ul>
-      </nav>
-    </div>
-    <h1 class="welcome-text">Wits Career Portal</h1>
-  </header>
+  <div class="main-container">
 
-    <div class="follow-us">
+    <div class="main">
+      
+    </div>
+  
+  </div>
+
+    <!-- <div class="follow-us">
       <a href="https://www.facebook.com/witsgraduaterecruitmentprogramme/"><i class="fa fa-facebook-f" style="font-size: 20px"></i></a><br><br>
       <a href="https://twitter.com/Wits_GRP?s=09"><i class="fa fa-twitter" style="font-size: 20px"></i></a><br><br>
       <a href="https://www.instagram.com/witsgrp/"><i class="fa fa-instagram" style="font-size: 20px"></i></a><br><br>
@@ -143,7 +124,6 @@
 
   </div>
 
-  <!-- Modal -->
   <div class="modal-container">
     <div class="modal">
       <h1>CCDU team</h1>
@@ -209,7 +189,11 @@
     </div>
   </div>
 
-  <script type="text/javascript" src="js/home.js"></script>
+  <script type="text/javascript" src="js/home.js"></script> -->
 
+  
 </body>
 </html>
+<?php
+    require "pages/footer.php";
+?>

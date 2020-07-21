@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <title> Home Page</title>
-    <link rel="stylesheet" href="../css/SignUpStyle.css?v=1.1">
+    <link rel="stylesheet" href="../css/SignUpStyle.css">
   </head>
   <body>
     
@@ -13,6 +13,37 @@
 
       <div class="sign-up">
         <h1>Sign Up</h1>
+        <?php
+          if (isset($_GET["error"])) {
+
+            if ($_GET["error"] == "emptyfields") {
+              echo "<p class='signup-error'>Fill in all required fields!</p>";
+            }
+            else if ($_GET["error"] == "invalidemail&username") {
+              echo "<p class='signup-error'>Invalid email and username!</p>";
+            }
+            else if ($_GET["error"] == "invalidemail") {
+              echo "<p class='signup-error'>Invalid email!</p>";
+            }
+            else if ($_GET["error"] == "username") {
+              echo "<p class='signup-error'>Invalid username!</p>";
+            }
+            else if ($_GET["error"] == "passwordmismatch") {
+              echo "<p class='signup-error'>Passwords does not match!</p>";
+            }
+            else if ($_GET["error"] == "databaseerror") {
+              echo "<p class='signup-error'>Some database error occurred, sign up again!</p>";
+            }
+            else if ($_GET["error"] == "usertaken") {
+              echo "<p class='signup-error'>Username is taken!</p>";
+            }
+            
+          }
+          else if (isset($_GET["signup"]) == "success") {
+            echo "<p class='signup-success'>Sign up successful!</p>";
+          }
+        ?>
+        
         <form action="../php/SignUp.inc.php" method="POST">
           <input type="text" name="company_name" placeholder="Company Name">
           <input type="text" name="username_company" placeholder="Email">

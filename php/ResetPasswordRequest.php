@@ -5,7 +5,7 @@ if (isset($_POST["submit_request"])) {
     $selector = bin2hex(random_bytes(8));
     $token = random_bytes(32); // to authentcate user
 
-    $url = "www.witscareerportal.co.za/forgottenpwd/CreateNewPassword.php?selector=" . $selector . '$validator=' . bin2hex($token);
+    $url = "http://localhost/Organization/pages/CreateNewPassword.php?selector=" . $selector . '&validator=' . bin2hex($token);
 
     $expires = date("U") + 1800;
 
@@ -52,7 +52,7 @@ if (isset($_POST["submit_request"])) {
     $message .= '<p>Here is your password reset link: </br>';
     $message .= '<a href="' . $url . '" >' . $url . '</a> <p>';
 
-    $headers = "From: CCDU <info.ccdu@wits.ac.za>\r\n";
+    $headers = "From: CCDU <1830088@students.wits.ac.za>\r\n";
     // $headers .= "Reply-To: \r\n";
     $headers .= "Content-type: text/html\r\n";
 

@@ -20,7 +20,7 @@
             exit();
         }
         else if (!filter_var($company_email, FILTER_VALIDATE_EMAIL) && !preg_match("/^[a-zA-Z0-9]*$/", $company_name)) {
-            header("Location: ../pages/SignUp.php?error=invalidemail&invalidcompanyname");
+            header("Location: ../pages/SignUp.php?error=invalidemail&username");
             exit();
         }
         else if (!filter_var($company_email, FILTER_VALIDATE_EMAIL)) {
@@ -28,7 +28,7 @@
             exit();
         }
         // else if (!preg_match("/^[-a-zA-Z0-9]*$/", $company_name)) {
-        //     header("Location: ../pages/SignUp.php?error=invalidcompanyname");
+        //     header("Location: ../pages/SignUp.php?error=username");
         //     exit();
         // }
         else if ($password !== $passwordRepeat) {
@@ -59,7 +59,28 @@
                 else {
 
                     $sql = "INSERT INTO users (company_name, email_users, pwd_users, company_reg_num, company_vat_num, company_address,
-                    country, country_code) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+                    country, country_code, active, account_verify) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                    
+                    $hash = md5( rand(0,1000) );
+                    $active = 0;
+
+                    $to      = $company_email; // Send email to our user
+                    $subject = 'Signup | Verification'; // Give the email a subject 
+                    $message = '
+                     
+                    Thanks for signing up!
+                    Your account has been created, you can login with the following credentials after you have activated your account by pressing the url below.
+                     
+
+                     
+                    Please click this link to activate your account:
+                    http://localhost/Organization/php/Verify.php?email='.$company_email.'&account_verify='.$hash.'
+                     
+                    '; // Our message above including the link
+                                         
+                    $headers = 'From:noreply@yourwebsite.com' . "\r\n"; // Set from headers
+                    mail($to, $subject, $message, $headers); // Send our email
+                    
                     $stmt = mysqli_stmt_init($connection);
                     if (!mysqli_stmt_prepare($stmt, $sql)) {
                         header("Location: ../pages/SignUp.php?error=databaseerror");
@@ -68,8 +89,10 @@
                     else {
                         $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
 
-                        mysqli_stmt_bind_param($stmt, "sssssssi", $company_name,$company_email,$hashedPwd,$reg_num,$vat_num,$address,
-                        $country,$country_code);
+                        // mysqli_stmt_bind_param($stmt, "sssssssi", $company_name,$company_email,$hashedPwd,$reg_num,$vat_num,$address,
+                        // $country,$country_code);
+                        mysqli_stmt_bind_param($stmt, "sssssssiis", $company_name,$company_email,$hashedPwd,$reg_num,$vat_num,$address,$country,$country_code,$active,$hash);
+
                         mysqli_stmt_execute($stmt);
                         header("Location: ../pages/SignUp.php?signup=success");
                         exit();

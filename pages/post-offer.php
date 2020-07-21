@@ -54,7 +54,7 @@
     <nav class="nav-bar">
       <div class="menu-bar">
         <ol>
-          <img src="../images/ccdu_logo.png" style="width: 80px; height: 40px;">
+        <img src="../images/logo.png" style="width: 200px; height: 40px;">
           <li><a href="../index.php">Home</a></li>
           <li class = "active"><a href="post_offer.php">Post Offers</a></li>
           <li><a href = "place_events.php">Place Events</a></li>

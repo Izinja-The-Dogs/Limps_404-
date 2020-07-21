@@ -19,10 +19,10 @@
 
         $connection = mysqli_connect("localhost", "root", "Sm*22^03%#", "organization");
 
-        $sql = "SELECT * FROM pwdReset WHERE pwdResetSelector=? AND pwdResetExpeires >= ?";
+        $sql = "SELECT * FROM pwdReset WHERE pwsResetSelector=? AND pwdResetExpires >= ?";
         $stmt = mysqli_stmt_init($connection);
         if (!mysqli_stmt_prepare($stmt, $sql)) {
-            echo "There was an error";
+            echo "There was an error25";
             exit();
         }
         else {
@@ -47,7 +47,7 @@
 
                     $tokenEmail = $row["pwdResetEmail"];
 
-                    $sql = "SELECT * FROM organization WHERE emailUsers=?;";  // need to be fixed in database
+                    $sql = "SELECT * FROM users WHERE email_users=?;";  // need to be fixed in database
                     $stmt = mysqli_stmt_init($connection);
                     if (!mysqli_stmt_prepare($stmt, $sql)) {
                         echo "There was an error";
@@ -64,7 +64,7 @@
                         }
                         else {
 
-                            $sql = "UPDATE organization SET pwdUsers=? WHERE emailUsers=?";
+                            $sql = "UPDATE users SET pwd_users=? WHERE email_users=?";
                             $stmt = mysqli_stmt_init($connection);
                             if (!mysqli_stmt_prepare($stmt, $sql)) {
                                 echo "There was an error";
@@ -76,7 +76,7 @@
                                 mysqli_stmt_bind_param($stmt, "ss", $newPwdHash, $tokenEmail);
                                 mysqli_stmt_execute($stmt);
 
-                                $sql = "DELETE FROM organization WHERE pwdResetEmail=?";
+                                $sql = "DELETE FROM pwdReset WHERE pwdResetEmail=?";
                                 $stmt = mysqli_stmt_init($connection);
                                 if (!mysqli_stmt_prepare($stmt, $sql)) {
                                     echo "There was an error";
@@ -86,7 +86,7 @@
 
                                     mysqli_stmt_bind_param($stmt, "s", $tokenEmail);
                                     mysqli_stmt_execute($stmt);
-                                    header("Location: ../php/CreateNewPassword.php?newpwd=pwdnotsame");
+                                    header("Location: ../index.php");
                                     
                                 }
                             }
