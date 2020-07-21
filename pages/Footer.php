@@ -40,12 +40,6 @@
                         </article>
                     </section>
 
-                    <!-- <section> -->
-
-                        
-
-                    <!-- </section> -->
-
                 </div>
                 <div class="footer-bottom">
                     Copyright &copy; 2020 | University of the Witswatersrand, Johannesburg.

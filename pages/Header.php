@@ -17,6 +17,7 @@
                         <li><a href="pages/PostOffer.php">Post Offers</a></li>
                         <li><a href = "pages/PlaceEvents.php">Place Events</a></li>
                         <li><a href = "pages/Pricing.php">Pricing</a></li>
+                        <li><a href = "#"><i class="fa fa-user" aria-hidden="true"></i> Profile</a></li>
                     </ul>
                     <div>
                         <form action="php/Logout.inc.php" method="post">

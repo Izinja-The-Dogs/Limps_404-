@@ -107,6 +107,7 @@ button {
 }
 
 .foooter-container {
+	margin-top: -65px;
 	background-color: #003B5C;
 	border-color: #001a29;
 }
@@ -131,15 +132,10 @@ button {
 	float: left;
 }
 
-.footer-content p {
-	font-size: 13px;
-}
-
-
 .main-section {
+    padding: 0;
 	width: 100%;
     display: inline-block;
-    padding: 0;
 	text-align: center;
 	display: flex;
 }
@@ -155,23 +151,8 @@ button {
 	flex: 1;
 	text-align: left;
 	color: white;
-	padding: 25px 25px;
+	padding: 25px;
 }
-
-/* .contact-us {
-	text-align: left;
-	color: white;
-}
-
-.find-us {
-	text-align: left;
-	color: white;
-}
-
-.social-media {
-	text-align: left;
-	color: white;
-} */
 
 .footer-title {
 	font-size: 20px;

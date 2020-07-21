@@ -22,12 +22,6 @@
   </div>
 
     <!-- <div class="follow-us">
-      <a href="https://www.facebook.com/witsgraduaterecruitmentprogramme/"><i class="fa fa-facebook-f" style="font-size: 20px"></i></a><br><br>
-      <a href="https://twitter.com/Wits_GRP?s=09"><i class="fa fa-twitter" style="font-size: 20px"></i></a><br><br>
-      <a href="https://www.instagram.com/witsgrp/"><i class="fa fa-instagram" style="font-size: 20px"></i></a><br><br>
-      <a href="https://www.youtube.com/channel/UCWXJSwdXtqEwnd0ab1mfdPQ"><i class="fa fa-youtube" style="font-size: 20px"></i></a><br><br>
-      <a href="https://www.linkedin.com/in/wits-graduate-recruitment-programme-539627174"><i class="fa fa-linkedin" style="font-size: 20px"></i></a>
-    </div>
 
     <div id="top_page">
       <div class="home-header-div" style="margin-left: 200px">
