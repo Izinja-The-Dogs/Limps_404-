@@ -96,15 +96,16 @@ button {
 	width: 60px;
 	height: 25px;
 	cursor: pointer;
+	
 }
 
-.main-container {
+/* .main-container {
 	min-height: 100%;
 }
 
 .main {
 	overflow: auto;
-}
+} */
 
 .foooter-container {
 	margin-top: -65px;
@@ -159,6 +160,38 @@ button {
 	margin-bottom: 0.5rem;
 	display: block;
 }
+.card {
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	text-align: left;
+	overflow: auto;
+	margin-top: 2%;
+	margin-left: 70%;
+	background-color:greenyellow;
+	border-style: solid;
+	border-radius: 6px;
+}
+
+.title {
+	visibility: visible;
+	color:blueviolet;
+	font-size: 13.5px;
+}
+
+.subject{
+
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    background-color:rgb(212,175,55);
+    text-align: center;
+    width: 100%;
+	color: white;
+	font-size: 13.5px;
+
+}
+
 
 /* .footer .footer-bottom {
 	

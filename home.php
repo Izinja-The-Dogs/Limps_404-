@@ -12,14 +12,16 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-
-  <div class="main-container">
+    <?php
+      include "php/check_profile.php";
+    ?>
+  <!-- <div class="main-container">
 
     <div class="main">
-      
+    
     </div>
   
-  </div>
+  </div> -->
 
     <!-- <div class="follow-us">
 
@@ -184,10 +186,7 @@
   </div>
 
   <script type="text/javascript" src="js/home.js"></script> -->
-
+  
   
 </body>
 </html>
-<?php
-    require "pages/footer.php";
-?>

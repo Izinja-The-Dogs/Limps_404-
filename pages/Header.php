@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-
+        
         <header>
             <div class="container">
                 <nav>
@@ -17,12 +17,17 @@
                         <li><a href="pages/PostOffer.php">Post Offers</a></li>
                         <li><a href = "pages/PlaceEvents.php">Place Events</a></li>
                         <li><a href = "pages/Pricing.php">Pricing</a></li>
-                        <li><a href = "#"><i class="fa fa-user" aria-hidden="true"></i> Profile</a></li>
                     </ul>
                     <div>
-                        <form action="php/Logout.inc.php" method="post">
-                            <button name="logout_in" class="logout-btn" name="logout_submit">Logout</button>
-                        </form>
+                        <ul>
+                            <li> <form method="post"><i class="fa fa-user" aria-hidden="true"></i>
+                                <button type="submit" name ="PROFILE" value="PROFILE">PROFILE</button>
+                            </form></li>
+                            
+                            <li><form action="php/Logout.inc.php" method="post">
+                                <button name="logout_in" class="logout-btn" name="logout_submit">Logout</button>
+                            </form></li>
+                        </ul>
                     </div>
                     
                 </nav>

@@ -2,7 +2,7 @@
 
     if (isset($_POST['login_submit'])) {
 
-        $connection = mysqli_connect("localhost", "root", "Sm*22^03%#", "organization");
+        $connection = mysqli_connect("localhost", "root", "", "organization");
 
         $userId = $_POST['username'];
         $password = $_POST['pwd'];
@@ -14,6 +14,7 @@
         else {
 
             $sql = "SELECT * FROM users WHERE company_name=? OR email_users=?";
+            
             $stmt = mysqli_stmt_init($connection);
             if (!mysqli_stmt_prepare($stmt, $sql)) {
                 header("Location: ../index.php?error=databaseerror");
@@ -41,7 +42,7 @@
                         $_SESSION['user_id'] = $row['id_users']; // use fpr logout
                         $_SESSION['username'] = $row['company_name'];
                         
-                        header("Location: ../home.php?login=success");
+                        header("Location: ../home.php?login=success&username=$userId");
                         exit();
 
                     }
